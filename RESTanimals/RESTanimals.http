@@ -1,0 +1,32 @@
+@host = https://localhost:7070
+
+GET {{host}}/api/Animals
+
+###
+GET {{host}}/api/Animals?nameStartsWith=f&minAge=2&sortOrder=age_desc
+
+###
+GET {{host}}/api/Animals/1
+
+###
+POST {{host}}/api/Animals
+Content-Type: application/json
+
+{
+  "name": "Rex",
+  "age": 4,
+  "primaryColor": "Grå"
+}
+
+###
+PUT {{host}}/api/Animals/1
+Content-Type: application/json
+
+{
+  "name": "Fido",
+  "age": 4,
+  "primaryColor": "Lysebrun"
+}
+
+###
+DELETE {{host}}/api/Animals/1

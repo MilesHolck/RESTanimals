@@ -1,0 +1,4 @@
+<Solution>
+  <Project Path="RESTanimals/RESTanimals.csproj" />
+  <Project Path="RESTanimalsTests/RESTanimalsTests.csproj" />
+</Solution>

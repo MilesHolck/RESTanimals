@@ -1,0 +1,12 @@
+# Build-mapper – skal ALDRIG i git
+bin/
+obj/
+
+# Visual Studio
+.vs/
+*.user
+*.suo
+
+# Hemmeligheder (hvis I senere får en database)
+Secrets.cs
+appsettings.Development.json
