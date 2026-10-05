@@ -1,0 +1,55 @@
+﻿<!DOCTYPE html>
+<html lang="da">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Animals, sort in JavaScript</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.1/axios.js"></script>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+</head>
+
+<body class="container">
+    <h1>Animals, sort + filter in JavaScript</h1>
+    <div id="app">
+
+        <div class="mb-3">
+            <input placeholder="Navn" type="text" v-model="name" v-on:keyup.enter="filterByName(name)">
+            <button v-on:click="filterByName(name)" class="btn btn-primary">Filtrér på navn</button>
+
+            <input placeholder="Farve" type="text" v-model="color" v-on:keyup.enter="filterByColor(color)">
+            <button v-on:click="filterByColor(color)" class="btn btn-primary">Filtrér på farve</button>
+
+            <button v-on:click="showAll()" class="btn btn-secondary">Vis alle</button>
+        </div>
+
+        <table v-if="animals.length > 0" class="table table-striped">
+            <thead>
+                <tr>
+                    <th><button v-on:click="sortById()">Id</button></th>
+                    <th><button v-on:click="sortByName()">Navn</button></th>
+                    <th>
+                        Alder
+                        <button v-on:click="sortByAgeAscending()">asc</button>
+                        <button v-on:click="sortByAgeDescending()">desc</button>
+                    </th>
+                    <th><button v-on:click="sortByColor()">Farve</button></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr v-for="animal in animals" :key="animal.id">
+                    <td>{{animal.id}}</td>
+                    <td>{{animal.name}}</td>
+                    <td>{{animal.age}}</td>
+                    <td>{{animal.primaryColor}}</td>
+                </tr>
+            </tbody>
+        </table>
+        <div v-else>Ingen dyr fundet</div>
+    </div>
+
+    <script src="index.js"></script>
+</body>
+
+</html>
