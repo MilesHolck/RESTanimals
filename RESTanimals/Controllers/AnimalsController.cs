@@ -12,13 +12,12 @@ namespace RESTanimals.Controllers
     {
         private readonly IAnimalsRepository _repo;
 
-        // Dependency injection: repo'et kommer fra Program.cs
+
         public AnimalsController(IAnimalsRepository repo)
         {
             _repo = repo;
         }
 
-        // GET: api/Animals?nameStartsWith=F&minAge=2&sortOrder=age_desc
         [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status204NoContent)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
