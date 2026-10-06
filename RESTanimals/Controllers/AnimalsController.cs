@@ -12,7 +12,6 @@ namespace RESTanimals.Controllers
     {
         private readonly IAnimalsRepository _repo;
 
-
         public AnimalsController(IAnimalsRepository repo)
         {
             _repo = repo;

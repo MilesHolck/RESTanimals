@@ -10,6 +10,8 @@ namespace RESTanimals.Models
 
         public string? PrimaryColor { get; set; }
 
+        public int ? SecondaryColor { get; set; } = 0;
+
         // Validering – kastes hvis data er ugyldigt (bruges i repo og testes i AnimalTests)
         public void ValidateName()
         {
