@@ -12,7 +12,7 @@ namespace RESTanimalsTests
         {
             _repo = new AnimalsRepositoryList(includesTestData: false);
             _repo.AddAnimal(new Animal { Name = "Fido", Age = 3, PrimaryColor = "Brun" });
-            _repo.AddAnimal(new Animal { Name = "Misser", Age = 5, PrimaryColor = "Sort" });
+            _repo.AddAnimal(new Animal { Name = "Bisser", Age = 5, PrimaryColor = "Sort" });
             _repo.AddAnimal(new Animal { Name = "Bella", Age = 1, PrimaryColor = "Hvid" });
         }
 
