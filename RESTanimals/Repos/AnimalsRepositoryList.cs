@@ -13,9 +13,9 @@ namespace RESTanimals.Repos
         {
             if (includesTestData)
             {
-                AddAnimal(new Animal { Name = "Fido", Age = 3, PrimaryColor = "Brun" });
-                AddAnimal(new Animal { Name = "Misser", Age = 5, PrimaryColor = "Sort" });
-                AddAnimal(new Animal { Name = "Bella", Age = 1, PrimaryColor = "Hvid" });
+                AddAnimal(new Animal { Name = "Ellie", Age = 3, PrimaryColor = "Brun" });
+                AddAnimal(new Animal { Name = "Beta", Age = 5, PrimaryColor = "Sort" });
+                AddAnimal(new Animal { Name = "Mussi", Age = 1, PrimaryColor = "Hvid" });
             }
         }
 
