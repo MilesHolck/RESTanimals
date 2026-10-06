@@ -3,9 +3,6 @@ on:
   push:
     branches:
     - master
-permissions:
-  id-token: write
-  contents: read
 env:
   AZURE_WEBAPP_NAME: restanimals-camilla
   AZURE_WEBAPP_PACKAGE_PATH: RESTanimals\publish
@@ -14,7 +11,6 @@ env:
   WORKING_DIRECTORY: RESTanimals
 jobs:
   build:
-    environment: restanimals_camilla_Env
     runs-on: windows-latest
     steps:
     - uses: actions/checkout@v4
@@ -36,7 +32,6 @@ jobs:
         name: webapp
         path: ${{ env.AZURE_WEBAPP_PACKAGE_PATH }}
   deploy:
-    environment: restanimals_camilla_Env
     runs-on: windows-latest
     needs: build
     steps:
@@ -45,14 +40,9 @@ jobs:
       with:
         name: webapp
         path: ${{ env.AZURE_WEBAPP_PACKAGE_PATH }}
-    - name: Azure Login
-      uses: azure/login@v2
-      with:
-        client-id: ${{ vars.restanimals_camilla_CLIENT_ID_7937 }}
-        tenant-id: ${{ vars.restanimals_camilla_TENANT_ID_4F54 }}
-        subscription-id: ${{ vars.restanimals_camilla_SUBSCRIPTION_ID_4F54 }}
     - name: Deploy to Azure WebApp
       uses: azure/webapps-deploy@v2
       with:
         app-name: ${{ env.AZURE_WEBAPP_NAME }}
+        publish-profile: ${{ secrets.AZURE_WEBAPP_PUBLISH_PROFILE }}
         package: ${{ env.AZURE_WEBAPP_PACKAGE_PATH }}
